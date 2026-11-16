@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-token Radar: protocols without a token, ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to the board</a>
+<div class="wrap">
+<div id="app"></div>
+<section class="method" id="method">
+<h2 class="section-title">Method</h2>
+<div class="method-grid">
+<p><strong>How the value is computed</strong> Each pre-token protocol is scored as TVL × base × growth × age × chains. The base is the median market cap to TVL of its category among live protocols with at least $5m of TVL, clipped to 0.15–1.20. Growth is one plus the clamped seven-day change times 0.6; age is 0.92 plus 0.05 for each year since listing, up to five; chains adds 0.04 for each extra chain, up to three. The multiple is clipped to 0.05–1.75.</p>
+<p><strong>What it is not</strong> It is not a price and not a forecast that a token is issued. The snapshot records no token for these protocols, and many of them may never have one. The number only states what the snapshot's own figures imply at one stated multiple.</p>
+<p><strong>How the farm plans are costed</strong> Gas is priced by the protocol's first chain and the number of transactions a step needs. A bridge step adds the destination chain's gas and $1.50. The ticket is $250 at $200m of TVL or more, $150 from $50m, and $100 below that. Every step states its own cost and time.</p>
+</div>
+</section>
+<footer class="page-footer" id="foot"></footer>
+</div>
+<aside class="drawer" id="detail" aria-label="Protocol detail" hidden></aside>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
